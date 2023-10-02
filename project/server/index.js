@@ -9,7 +9,10 @@ const router =require('./router/index')
 const erromiddlewear=require('./middlewear/error-middlewear')
 app.use(express.json())
 app.use(cookieParser())
-app.use(cors())
+app.use(cors({
+    credentials:true,
+    origin:process.env.CLIENT_URL
+}))
 app.use('/auth',router)
 app.use(erromiddlewear)
 
