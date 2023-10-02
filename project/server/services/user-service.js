@@ -64,6 +64,11 @@ class UserService {
         }
 
     }
+    async getAllUsers(){
+        const users=UserModel.findOne()
+        return users
+
+    }
 
 }
 module.exports=new UserService()
